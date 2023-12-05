@@ -35,3 +35,16 @@ public class practise {
         System.out.println(distinct);
      }
 ```
+
+### check if array is sorted:
+```
+public static void sortedArray(int arr[]){
+         boolean isSort = true;
+         //to check sorted array
+        for(int i=0;i<arr.length-1;i++){
+            if((arr[i+1]<arr[i]))
+                isSort = false;
+        }
+        System.out.println(isSort?"is sorted":"not sorted");
+    }
+```
