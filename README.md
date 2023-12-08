@@ -153,3 +153,19 @@ public static void main(String[] args) {
         System.out.println(newStr);
     }
 ```
+With the use of an array: 
+```
+static void reverse(String name){
+        int i = name.length()-1;
+        String str="";
+
+        while(i>=0){
+            str = str + name.charAt(i);
+            i--;
+        }
+        if(str == name)
+            System.out.println("palindrome");
+        else
+            System.out.println("not palindrome");
+    }
+```
