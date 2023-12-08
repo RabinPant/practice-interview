@@ -169,3 +169,33 @@ static void reverse(String name){
             System.out.println("not palindrome");
     }
 ```
+### Decimal To Binary
+```
+public void binary(int dec_number){
+        int i =0;
+        String res = "";
+        while(dec_number>0){
+            int r = dec_number % 2;
+            res = r + res;
+            dec_number = dec_number/2;
+        }
+        System.out.println(res);
+
+    }
+```
+
+### Basic concept of Wrapper Classes:
+we have primitive type in Java like int, float,char etc in similar way we have wrapper classes of these like Integer, Character.<br>
+why we need these? beacuse when we're working in OOPS then we can't make use of the primitive type and we need these <br> 
+when we have the arraylist then at that time also we need to make use of these Wrapper classes
+
+### Autoboxing and Unboxing:
+```
+int x = 10;
+Integer y = x;  //autoboxing
+int z = y    // unboxing
+```
+
+The concept of changing the primitive to wrapper is the autoBoxing <br>
+The concept of changing the wrapper to primitve is the unBoxing <br>
+
