@@ -199,3 +199,49 @@ int z = y    // unboxing
 The concept of changing the primitive to wrapper is the autoBoxing <br>
 The concept of changing the wrapper to primitve is the unBoxing <br>
 
+### Merge String Alternately:
+Input: word1 = "abc", word2 = "pqr" <br>
+Output: "apbqcr" <br>
+Explanation: The merged string will be merged as so: <br>
+word1:  a   b   c <br>
+word2:    p   q   r <br>
+merged: a p b q c r <br>
+Example 2: <br>
+
+Input: word1 = "ab", word2 = "pqrs" <br>
+Output: "apbqrs" <br>
+Explanation: Notice that as word2 is longer, "rs" is appended to the end. <br>
+word1:  a   b  <br>
+word2:    p   q   r   s <br>
+merged: a p b q   r   s <br>
+
+```
+public String mergeAlternately(String word1, String word2) {
+       int i=0;
+       int j=0;
+        boolean flag = true;
+
+        StringBuilder str = new StringBuilder();
+       while(i<word1.length() && j<word2.length()){
+           if(flag){
+               str.append(word1.charAt(i));
+               i++;
+           }else{
+               str.append(word2.charAt(j));
+               j++;
+           }
+           flag = !flag;
+       } 
+
+       while(i<word1.length()){
+           str.append(word1.charAt(i));
+           i++;
+       }
+       while(j<word2.length()){
+           str.append(word2.charAt(j));
+           j++;
+       }
+       return str.toString();
+    }
+}
+```
