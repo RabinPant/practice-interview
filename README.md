@@ -307,3 +307,17 @@ static void moveToEnd(int arr[]){
             }
         }
 ```
+### move zero to end => o(n)
+```
+static void moveToEnd(int arr[]){
+        // arr = {8,5,0,10,0,20}
+
+        int j=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=0){
+                swap(arr[i],arr[j]);
+                j++;
+            }
+        }
+    }
+```
