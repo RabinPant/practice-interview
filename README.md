@@ -321,3 +321,50 @@ static void moveToEnd(int arr[]){
         }
     }
 ```
+### Can Place Flowers:
+```
+class Solution {
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        int fi = -1;
+        int li =-1;
+        int max=0;
+        // find the first and last:
+        for(int i=0;i<flowerbed.length;i++){
+
+            if(flowerbed[i]==0){
+                continue;
+            }else if(fi==-1){
+                fi=i;
+                li=i;
+
+            }else{
+                li=i;
+            }
+        }
+
+        // all zeroes
+        if(fi==-1){
+            return (n<=(flowerbed.length+1)/2);
+        }
+
+        // first and last:
+        max = fi/2;//left
+        max += (flowerbed.length-li-1)/2;
+
+        //middle:
+        int count = 0;
+        for(int i=fi+1;i<=li-1;i++){
+            if(flowerbed[i]==0){
+                count++;
+            }else{
+                max+=(count-1)/2;
+                count=0;
+            }
+        }
+        max +=(count-1)/2;
+        return n<=max;
+
+
+    }
+}
+```
