@@ -430,3 +430,40 @@ class Solution {
     }
 }
 ```
+
+### product of an array except self
+
+```
+Example 1:
+
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+Example 2:
+
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0]
+```
+```
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        
+        int[]prefix = new int[nums.length];
+        int[]suffix = new int[nums.length];
+        prefix[0]=1;
+        suffix[nums.length-1] =1;
+        for(int i=1;i<nums.length;i++){
+            prefix[i] = prefix[i-1]*nums[i-1];
+        }
+        for(int i=suffix.length-2;i>=0;i--){
+            suffix[i] =suffix[i+1]* nums[i+1]; 
+        }
+
+        int []ans = new int[nums.length];
+        for(int i=0;i<ans.length;i++){
+            ans[i] = prefix[i]*suffix[i];
+        }
+
+        return ans;
+    }
+}
+```
